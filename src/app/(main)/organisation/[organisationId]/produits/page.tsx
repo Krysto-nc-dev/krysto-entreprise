@@ -91,7 +91,7 @@ const Page = ({ params }: { params: { organisationId: string } }) => {
           name: product.label, // Utilisation du label au lieu du nom
           description: product.description,
           price: parseFloat(product.price), // Parse to number
-          stock: product.stock || 0,
+          stock: product.stock_reel|| 0,
           imageUrl: product.imageUrl,
           organisationId: product.array_options?.options_organisationid || 'N/A',
         }));

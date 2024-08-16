@@ -6,9 +6,9 @@ import React from 'react'
 const PipelinesLayout = ({ children }: { children: React.ReactNode }) => {
   return (
 
-    <div className ="overflow-hidden">
+    <BlurPage className ="overflow-hidden">
       {children}
-    </div>
+    </BlurPage>
 
   );
 }

@@ -48,7 +48,7 @@ const Page = async ({ params, searchParams }: Props) => {
     }
 
     return (
-        <div>
+        <BlurPage>
             <div className="flex flex-col justify-center items-center">
                 <div className="w-full h-full max-w-[800px]">
                     <Card className="border-none">
@@ -129,7 +129,7 @@ const Page = async ({ params, searchParams }: Props) => {
                     </Card>
                 </div>
             </div>
-        </div>
+        </BlurPage>
     );
 };
 

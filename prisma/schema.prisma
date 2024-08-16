@@ -428,6 +428,7 @@ model SubAccountSidebarOption {
   icon          Icon        @default(info)
   createdAt     DateTime    @default(now())
   updatedAt     DateTime    @default(now())
+  active        Boolean     @default(true) // Ajouté pour activer/désactiver
   subAccountId  String
   SubAccount    SubAccount  @relation(fields: [subAccountId], references: [id], onDelete: Cascade)
 

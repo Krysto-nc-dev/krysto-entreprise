@@ -28,8 +28,13 @@ import {
 import FileUpload from '@/components/global/fileUpload'
 import { Organisation, SubAccount } from '@prisma/client'
 import { useToast } from '@/components/ui/use-toast'
-import { upsertSubAccount, saveActivityLogsNotification  } from '@/lib/queries'
-import { useEffect } from 'react'
+import {
+  upsertSubAccount,
+  saveActivityLogsNotification,
+  getSubaccountDetails,
+  toggleSidebarOptionActive
+} from '@/lib/queries'
+import { useEffect, useState } from 'react'
 import Loading from '@/components/global/loading'
 import { useModal } from '@/providers/modal-provider'
 
@@ -61,6 +66,10 @@ const SubAccountDetails: React.FC<SubAccountDetailsProps> = ({
   const { toast } = useToast()
   const { setClose } = useModal()
   const router = useRouter()
+  const [sidebarOptions, setSidebarOptions] = useState<
+    { id: string; name: string; active: boolean }[]
+  >([])
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -76,12 +85,62 @@ const SubAccountDetails: React.FC<SubAccountDetailsProps> = ({
     },
   })
 
+  useEffect(() => {
+    if (details?.id) {  // Assurez-vous que details.id est défini
+      form.reset(details)
+      const fetchSidebarOptions = async () => {
+        try {
+          const subaccountDetails = await getSubaccountDetails(details.id)
+          console.log('Subaccount Details:', subaccountDetails)
+
+          if (subaccountDetails?.SidebarOption?.length > 0) {
+            const options = subaccountDetails.SidebarOption.map(option => ({
+              id: option.id,
+              name: option.name,
+              active: option.active || false,
+            }))
+            console.log('Options fetched:', options)
+            setSidebarOptions(options)
+          } else {
+            console.warn('No SidebarOption found for subaccount:', details.id)
+            setSidebarOptions([])  // Clear options if none found
+          }
+        } catch (error) {
+          console.error('Error fetching sidebar options:', error)
+          toast({
+            variant: 'destructive',
+            title: 'Erreur',
+            description: 'Impossible de récupérer les options de la barre latérale.',
+          })
+        }
+      }
+
+      fetchSidebarOptions()
+    }
+  }, [details, form, toast])
+
+  const handleToggle = async (sidebarOptionId: string, isActive: boolean) => {
+    try {
+      await toggleSidebarOptionActive(details?.id as string, sidebarOptionId, isActive)
+      setSidebarOptions((prevOptions) =>
+        prevOptions.map((option) =>
+          option.id === sidebarOptionId ? { ...option, active: isActive } : option
+        )
+      )
+    } catch (error) {
+      console.error('Error toggling sidebar option:', error)
+      toast({
+        variant: 'destructive',
+        title: 'Erreur',
+        description: 'Impossible de mettre à jour l\'option de la barre latérale.',
+      })
+    }
+  }
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      // Définir l'ID du sous-compte
-      const subaccountId = details?.id ? details.id : uuidv4();
-  
-      // Sauvegarde ou mise à jour du sous-compte
+      const subaccountId = details?.id ? details.id : uuidv4()
+
       const response = await upsertSubAccount({
         id: subaccountId,
         address: values.address,
@@ -98,39 +157,32 @@ const SubAccountDetails: React.FC<SubAccountDetailsProps> = ({
         organisationId: organisationDetails.id,
         connectAccountId: '',
         goal: 5000,
-      });
-  
-      // Enregistrement du journal d'activité
+      })
+
       await saveActivityLogsNotification({
         organisationId: organisationDetails.id,
         description: `Nouveau sous-compte créé : ${values.name} par ${userName}`,
-        subAccountId: subaccountId,  // Inclure subaccountId ici
-      });
-  
-      if (!response) throw new Error('Pas de réponse du serveur');
-  
+        subAccountId: subaccountId,
+      })
+
+      if (!response) throw new Error('Pas de réponse du serveur')
+
       toast({
         title: 'Détails du sous-compte enregistrés',
         description: 'Vos détails de sous-compte ont été enregistrés avec succès.',
-      });
-  
-      setClose();
-      router.refresh();
+      })
+
+      setClose()
+      router.refresh()
     } catch (error) {
-      console.error(error);
+      console.error('Error saving subaccount details:', error)
       toast({
         variant: 'destructive',
         title: 'Oups!',
         description: 'Impossible d\'enregistrer les détails du sous-compte.',
-      });
+      })
     }
   }
-  
-  useEffect(() => {
-    if (details) {
-      form.reset(details)
-    }
-  }, [details, form])
 
   const isLoading = form.formState.isSubmitting
 
@@ -280,6 +332,8 @@ const SubAccountDetails: React.FC<SubAccountDetailsProps> = ({
                 </FormItem>
               )}
             />
+
+            
             <Button type="submit" disabled={isLoading}>
               {isLoading ? <Loading /> : 'Enregistrer les informations du compte'}
             </Button>

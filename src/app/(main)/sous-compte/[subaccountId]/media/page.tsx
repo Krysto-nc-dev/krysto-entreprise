@@ -12,9 +12,9 @@ const page = async ({params}: {params:Props}) => {
 
   
   return (
-<div>
+<BlurPage>
     <MediaComponent data= {data} subaccountId={params.subaccountId}/>
-</div>
+</BlurPage>
   )
 }
 

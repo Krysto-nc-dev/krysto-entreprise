@@ -11,7 +11,6 @@ import axios from 'axios'
 
 
 
-
 export const getAuthUserDetails = async () => {
   const user = await currentUser()
   if (!user) {
@@ -582,6 +581,9 @@ export const deleteSubAccount = async (subaccountId: string) => {
   const response = await db.subAccount.delete({
     where: {
       id: subaccountId,
+    },
+    include: {
+      SidebarOption: true, // Assurez-vous que ce champ correspond à votre modèle Prisma
     },
   })
   return response

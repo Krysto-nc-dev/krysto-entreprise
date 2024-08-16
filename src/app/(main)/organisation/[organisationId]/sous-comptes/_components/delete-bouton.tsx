@@ -48,9 +48,9 @@ const DeleteButton = ({ subaccountId }: Props) => {
   }
 
   return (
-    <div className="text-white" onClick={handleDelete}>
+    <div className="text-white flex items-center gap-2" onClick={handleDelete}>
       <TrashIcon size={15} className="text-gray-100" />
-      Supprimer le sous-compte
+      Confirmer
     </div>
   )
 }
