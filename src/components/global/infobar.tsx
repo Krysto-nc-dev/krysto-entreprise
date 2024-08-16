@@ -16,7 +16,7 @@ import { Role } from '@prisma/client'
 import { Card } from '../ui/card'
 import { Switch } from '../ui/switch'
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
-import { ModeToggle } from './modeToggle'
+import { ModeToggle } from './modetoggle'
 
 type Props = {
   notifications: NotificationWithUser | []

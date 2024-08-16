@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import DashboardHeading from '@/components/organisation/dashboardHeading';
-import Table from '../../../../../components/Table';
+import DashboardHeading from '@/components/organisation/dashboardheading';
+import Table from '../../../../../components/table';
 import { createColumnHelper, ColumnDef } from '@tanstack/react-table';
 import { getThirdparties } from '@/lib/dolibarrQueries/dolibarrThirdpartyQueries';
 import { Button } from '@/components/ui/button';

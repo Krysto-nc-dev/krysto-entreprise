@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import DashboardHeading from '@/components/organisation/dashboardHeading';
+import DashboardHeading from '@/components/organisation/dashboardheading';
 import {
     Card,
     CardContent,

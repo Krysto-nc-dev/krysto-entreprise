@@ -1,6 +1,6 @@
 'use client'
 import CreateFunnelPage from '@/components/forms/funnel-page'
-import CustomModal from '@/components/global/customModal'
+import CustomModal from '@/components/global/custommodal'
 import { AlertDialog } from '@/components/ui/alert-dialog'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'

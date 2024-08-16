@@ -1,4 +1,4 @@
-import BlurPage from '@/components/global/blurPage';
+import BlurPage from '@/components/global/blurpage';
 import { Button } from '@/components/ui/button';
 import {
   Card,

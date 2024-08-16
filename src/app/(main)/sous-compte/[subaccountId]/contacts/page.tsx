@@ -1,4 +1,4 @@
-import BlurPage from '@/components/global/blurPage'
+import BlurPage from '@/components/global/blurpage'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import {

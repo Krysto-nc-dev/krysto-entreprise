@@ -1,4 +1,4 @@
-import OrganisationDetails from '@/components/forms/organisationDetails';
+import OrganisationDetails from '@/components/forms/organisationdetails';
 import { Button } from '@/components/ui/button';
 import {
   Card,

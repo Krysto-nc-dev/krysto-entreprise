@@ -21,7 +21,7 @@ import {
 import { useModal } from '@/providers/modal-provider'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import CustomModal from '@/components/global/customModal'
+import CustomModal from '@/components/global/custommodal'
 
 
 interface FunnelsDataTableProps<TData, TValue> {

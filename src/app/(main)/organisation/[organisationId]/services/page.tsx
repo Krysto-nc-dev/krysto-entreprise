@@ -1,13 +1,13 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Table from '../../../../../components/Table';
+import Table from '../../../../../components/table';
 import { createColumnHelper, ColumnDef } from '@tanstack/react-table';
 import Link from 'next/link';
 import { MoreHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
-import DashboardHeading from '@/components/organisation/dashboardHeading';
+import DashboardHeading from '@/components/organisation/dashboardheading';
 
 // Définition du type de données pour les services
 type ServiceData = {

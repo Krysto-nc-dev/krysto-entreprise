@@ -22,7 +22,7 @@ import {
 } from '../ui/form';
 import { createMedia, saveActivityLogsNotification } from '@/lib/queries';
 import { Input } from '../ui/input';
-import FileUpload from '../global/fileUpload';
+import FileUpload from '../global/fileupload';
 import { Button } from '../ui/button';
 
 type Props = {

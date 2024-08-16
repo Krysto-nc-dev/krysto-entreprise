@@ -1,5 +1,5 @@
 
-import BlurPage from '@/components/global/blurPage'
+import BlurPage from '@/components/global/blurpage'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { getFunnel } from '@/lib/queries'
 import Link from 'next/link'

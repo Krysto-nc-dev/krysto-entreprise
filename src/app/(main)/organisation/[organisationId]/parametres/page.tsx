@@ -2,7 +2,7 @@
 import { db } from '@/lib/db'
 import React from 'react'
 import { currentUser } from '@clerk/nextjs/server'
-import OrganisationDetails from '@/components/forms/organisationDetails';
+import OrganisationDetails from '@/components/forms/organisationdetails';
 import UserDetails from '@/components/forms/userDetails';
 
 type Props = {

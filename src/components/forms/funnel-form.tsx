@@ -25,7 +25,7 @@ import { toast } from '../ui/use-toast'
 import { useModal } from '@/providers/modal-provider'
 import { useRouter } from 'next/navigation'
 import { zodResolver } from '@hookform/resolvers/zod'
-import FileUpload from '../global/fileUpload'
+import FileUpload from '../global/fileupload'
 
 interface CreateFunnelProps {
   defaultData?: Funnel

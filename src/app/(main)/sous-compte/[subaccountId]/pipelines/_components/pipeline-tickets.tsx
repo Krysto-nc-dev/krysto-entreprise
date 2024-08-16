@@ -1,6 +1,6 @@
 'use client'
 import TicketForm from '@/components/forms/ticket-form'
-import CustomModal from '@/components/global/customModal'
+import CustomModal from '@/components/global/custommodal'
 import TagComponent from '@/components/global/tag'
 import LinkIcon from '@/components/icons/link'
 import {

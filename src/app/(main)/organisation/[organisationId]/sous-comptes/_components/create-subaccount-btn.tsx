@@ -1,6 +1,6 @@
 'use client'
-import SubAccountDetails from '@/components/forms/subaccountDetails'
-import CustomModal from '@/components/global/customModal'
+import SubAccountDetails from '@/components/forms/subaccountdetails'
+import CustomModal from '@/components/global/custommodal'
 import { Button } from '@/components/ui/button'
 import { useModal } from '@/providers/modal-provider'
 import { Organisation, OrganisationSidebarOption, SubAccount, User } from '@prisma/client'

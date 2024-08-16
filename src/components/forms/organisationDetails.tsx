@@ -46,7 +46,7 @@ import { NumberInput } from '@tremor/react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import * as z from 'zod';
-import FileUpload from '@/components/global/fileUpload';
+import FileUpload from '@/components/global/fileupload';
 import { Input } from '@/components/ui/input';
 import {
   updateOrganisationDetails,

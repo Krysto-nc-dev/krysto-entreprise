@@ -36,7 +36,7 @@ import {
   FormMessage,
   FormDescription
 } from '@/components/ui/form'
-import FileUpload from '@/components/global/fileUpload'
+import FileUpload from '@/components/global/fileupload'
 import { Input } from '@/components/ui/input'
 import {
   Select,

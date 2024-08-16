@@ -2,7 +2,7 @@
 import { useModal } from '@/providers/modal-provider';
 import React from 'react';
 import { Button } from '../ui/button';
-import CustomModal from '../global/customModal';
+import CustomModal from '../global/custommodal';
 import UploadMediaForm from '../forms/uploadMedia';
 
 type Props = {

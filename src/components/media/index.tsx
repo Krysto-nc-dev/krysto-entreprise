@@ -1,7 +1,7 @@
 import { GetMediaFiles } from '@/lib/types';
 import MediaUploadButton from './upload-buttons';
 import MediaCard from './mediaCard';
-import BlurPage from '@/components/global/blurPage';
+import BlurPage from '@/components/global/blurpage';
 import { Command, CommandInput, CommandList, CommandEmpty, CommandItem, CommandGroup } from '../ui/command';
 import React from 'react';
 

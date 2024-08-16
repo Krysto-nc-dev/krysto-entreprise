@@ -25,7 +25,7 @@ import {
   CardContent,
 } from '@/components/ui/card'
 
-import FileUpload from '@/components/global/fileUpload'
+import FileUpload from '@/components/global/fileupload'
 import { Organisation, SubAccount } from '@prisma/client'
 import { useToast } from '@/components/ui/use-toast'
 import {

@@ -27,8 +27,8 @@ import {
 } from '../ui/command'
 import Link from 'next/link'
 import { useModal } from '@/providers/modal-provider'
-import CustomModal from '../global/customModal'
-import SubAccountDetails from '../forms/subaccountDetails'
+import CustomModal from '../global/custommodal'
+import SubAccountDetails from '../forms/subaccountdetails'
 
 type Props = {
   defaultOpen?: boolean

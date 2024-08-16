@@ -26,8 +26,8 @@ import { SubAccount } from '@prisma/client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { EditIcon, TrashIcon } from 'lucide-react';
-import CustomModal from '@/components/global/customModal';
-import SubAccountDetails from '@/components/forms/subaccountDetails';
+import CustomModal from '@/components/global/custommodal';
+import SubAccountDetails from '@/components/forms/subaccountdetails';
 import { useModal } from '@/providers/modal-provider';
 import DeleteButton from './_components/delete-bouton';
 

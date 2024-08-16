@@ -30,7 +30,7 @@ import { Edit, MoreVertical, PlusCircleIcon, Trash } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import React, { Dispatch, SetStateAction, useMemo } from 'react'
 
-import CustomModal from '@/components/global/customModal'
+import CustomModal from '@/components/global/custommodal'
 import TicketForm from '@/components/forms/ticket-form'
 import PipelineTicket from './pipeline-tickets'
 

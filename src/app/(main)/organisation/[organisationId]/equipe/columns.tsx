@@ -43,7 +43,7 @@ import { useToast } from '@/components/ui/use-toast'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { UsersWithOrganisationSubAccountPermissionsSidebarOptions } from '@/lib/types'
-import CustomModal from '@/components/global/customModal'
+import CustomModal from '@/components/global/custommodal'
 
 export const columns: ColumnDef<UsersWithOrganisationSubAccountPermissionsSidebarOptions>[] =
   [

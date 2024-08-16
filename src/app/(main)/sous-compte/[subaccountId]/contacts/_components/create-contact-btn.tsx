@@ -1,6 +1,6 @@
 'use client'
 import ContactUserForm from '@/components/forms/contact-user-form'
-import CustomModal from '@/components/global/customModal'
+import CustomModal from '@/components/global/custommodal'
 import { Button } from '@/components/ui/button'
 import { useModal } from '@/providers/modal-provider'
 import { saveActivityLogsNotification } from '@/lib/queries'

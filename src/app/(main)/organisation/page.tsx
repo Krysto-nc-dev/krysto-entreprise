@@ -3,7 +3,7 @@ import { currentUser } from '@clerk/nextjs/server'
 import { redirect } from 'next/navigation'
 import React from 'react'
 import { Plan } from '@prisma/client'
-import OrganisationDetails from '@/components/forms/organisationDetails'
+import OrganisationDetails from '@/components/forms/organisationdetails'
 
 
 const page = async ({

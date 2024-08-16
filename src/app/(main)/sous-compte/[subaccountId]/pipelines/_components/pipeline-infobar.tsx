@@ -116,7 +116,7 @@
 'use client'
 import React, { useState } from 'react';
 import CreatePipelineForm from '@/components/forms/create-pipeline-form';
-import CustomModal from '@/components/global/customModal';
+import CustomModal from '@/components/global/custommodal';
 import { Button } from '@/components/ui/button';
 import {
   Command,

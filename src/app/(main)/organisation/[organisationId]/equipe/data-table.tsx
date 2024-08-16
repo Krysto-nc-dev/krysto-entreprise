@@ -20,7 +20,7 @@ import { useModal } from '@/providers/modal-provider';
 import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import CustomModal from '@/components/global/customModal';
+import CustomModal from '@/components/global/custommodal';
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
