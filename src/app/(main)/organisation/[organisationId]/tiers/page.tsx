@@ -2,14 +2,14 @@
 
 import React, { useEffect, useState } from 'react';
 import DashboardHeading from '@/components/organisation/dashboardHeading';
-import Table from '@/components/table';
+import Table from '../../../../../components/Table';
 import { createColumnHelper, ColumnDef } from '@tanstack/react-table';
 import { getThirdparties } from '@/lib/dolibarrQueries/dolibarrThirdpartyQueries';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { MoreHorizontal } from 'lucide-react';
 import Link from 'next/link';
-// Définition du type de données basé sur l'objet reçu
+// Définition du type de données basé sur l'objet reçu !
 type Data = {
   id: string;
   name: string;

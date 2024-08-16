@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Table from '@/components/table';
+import Table from '../../../../../components/Table';
 import { createColumnHelper, ColumnDef } from '@tanstack/react-table';
 import Link from 'next/link';
 import { MoreHorizontal } from 'lucide-react';
